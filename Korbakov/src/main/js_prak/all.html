@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Практика</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .task {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        .task h2 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .result {
+            background-color: #e8f4f8;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<h1>JavaScript Практика - 24 задания</h1>
+
+<!-- Задание 1 -->
+<div class="task">
+    <h2>1. Длина имени</h2>
+    <p>Введите свое имя "yourName", посчитайте его длину с помощью свойства "yourName".length</p>
+    <button onclick="task1()">Выполнить</button>
+    <div class="result" id="task1"></div>
+</div>
+
+<!-- Задание 2 -->
+<div class="task">
+    <h2>2. Сложение чисел</h2>
+    <p>Выполните операцию сложения с цифрами 3, 5.</p>
+    <button onclick="task2()">Выполнить</button>
+    <div class="result" id="task2"></div>
+</div>
+
+<!-- Задание 3 -->
+<div class="task">
+    <h2>3. Деление с confirm</h2>
+    <p>Выполните операцию деления с цифрами 16 и 2. Сделайте вывод частного с помощью функции диалогового окна confirm().</p>
+    <button onclick="task3()">Выполнить</button>
+    <div class="result" id="task3"></div>
+</div>
+
+<!-- Задание 4 -->
+<div class="task">
+    <h2>4. Возраст в консоль</h2>
+    <p>Задайте свой возраст с помощью переменной age. Выведите значение переменной в консоль браузера с помощью функции console.log().</p>
+    <button onclick="task4()">Выполнить</button>
+    <div class="result" id="task4"></div>
+</div>
+
+<!-- Задание 5 -->
+<div class="task">
+    <h2>5. Ввод слова и обработка</h2>
+    <p>Сделайте ввод любого слова с помощью функции prompt(). Установите его длину, выведете значение длины в консоль. С помощью свойства substring() выведете в консоль первые две буквы слова.</p>
+    <button onclick="task5()">Выполнить</button>
+    <div class="result" id="task5"></div>
+</div>
+
+<!-- Задание 6 -->
+<div class="task">
+    <h2>6. Сравнение возраста родителей</h2>
+    <p>Запросите у пользователя с помощью функции prompt() возраст его родителей. И напишите условие, при котором выводится имя того, кто старше. Используем оператор условия if.</p>
+    <button onclick="task6()">Выполнить</button>
+    <div class="result" id="task6"></div>
+</div>
+
+<!-- Задание 7 -->
+<div class="task">
+    <h2>7. Концерт Аллы Пугачевой</h2>
+    <p>Ребенок желает пойти на выступление известных артистов. В городе проводится концерт только Аллы Пугачевой, куда пускают детей старше 12 лет. Необходимо уточнить возраст ребенка и спросить готов ли он отправиться слушать эту певицу. При утвердительном ответе вывести «Вперед за билетами», при отрицательном «Сиди дома».</p>
+    <button onclick="task7()">Выполнить</button>
+    <div class="result" id="task7"></div>
+</div>
+
+<!-- Задание 8 -->
+<div class="task">
+    <h2>8. Функция возведения в квадрат</h2>
+    <p>Напишите функцию возведения любого числа в квадрат, результат вычисления выведете в диалоговое окно, используя структуру функции function(){};.</p>
+    <button onclick="task8()">Выполнить</button>
+    <div class="result" id="task8"></div>
+</div>
+
+<!-- Задание 9 -->
+<div class="task">
+    <h2>9. Функция приветствия</h2>
+    <p>Напишите функцию приветствия. Используя ее, пользователь задает свое имя, в итоге в диалоговое окно должно быть выведено "Доброго здоровечка Имя_Пользователя".</p>
+    <button onclick="task9()">Выполнить</button>
+    <div class="result" id="task9"></div>
+</div>
+
+<!-- Задание 10 -->
+<div class="task">
+    <h2>10. Проверка деления на 4</h2>
+    <p>Написать функцию, которая возвращает частное от деления на 4. Ввести через диалоговое окно переменную и выполнить сравнение, если остаток от деления (оператор %) равен нулю, то выводим в диалоговое окно «Выражение истинно», в противном случае «Выражение ложно».</p>
+    <button onclick="task10()">Выполнить</button>
+    <div class="result" id="task10"></div>
+</div>
+
+<!-- Задание 11 -->
+<div class="task">
+    <h2>11. Периметр прямоугольника</h2>
+    <p>Напишите функцию расчета периметра прямоугольника function(a,b){};</p>
+    <button onclick="task11()">Выполнить</button>
+    <div class="result" id="task11"></div>
+</div>
+
+<!-- Задание 12 -->
+<div class="task">
+    <h2>12. Цикл for 1-10</h2>
+    <p>Сделайте вывод в консоль цифры от 1 до 10, используя цикл for.</p>
+    <button onclick="task12()">Выполнить</button>
+    <div class="result" id="task12"></div>
+</div>
+
+<!-- Задание 13 -->
+<div class="task">
+    <h2>13. Цикл for 5-50 с шагом 5</h2>
+    <p>Сделайте вывод в консоль цифр от 5 до 50 с шагом 5, используя цикл for.</p>
+    <button onclick="task13()">Выполнить</button>
+    <div class="result" id="task13"></div>
+</div>
+
+<!-- Задание 14 -->
+<div class="task">
+    <h2>14. Цикл while 1-10</h2>
+    <p>Выполните упражнение 12, используя цикл while.</p>
+    <button onclick="task14()">Выполнить</button>
+    <div class="result" id="task14"></div>
+</div>
+
+<!-- Задание 15 -->
+<div class="task">
+    <h2>15. Цикл while 5-50 с шагом 5</h2>
+    <p>Выполните упражнение 13, используя цикл while.</p>
+    <button onclick="task15()">Выполнить</button>
+    <div class="result" id="task15"></div>
+</div>
+
+<!-- Задание 16 -->
+<div class="task">
+    <h2>16. Цикл с сообщением</h2>
+    <p>Пусть переменная i=5, напишите цикл, в котором, при условии, что i<1, хотя бы раз выведется сообщение «Нас не задушишь, не убьешь».</p>
+    <button onclick="task16()">Выполнить</button>
+    <div class="result" id="task16"></div>
+</div>
+
+<!-- Задание 17 -->
+<div class="task">
+    <h2>17. Меню с switch</h2>
+    <p>Перед вами меню, в котором можно выбрать: яблоко, апельсин, сок, пиво. С помощью диалогового окна, введите то, что вы желаете заказать. С помощью switch() на ваш выбор в консоли отобразиться фраза: «Ваш выбор (название) + просто идеален». При наборе слова, которого нет в меню, выводится фраза «Пошел прочь!»</p>
+    <button onclick="task17()">Выполнить</button>
+    <div class="result" id="task17"></div>
+</div>
+
+<!-- Задание 18 -->
+<div class="task">
+    <h2>18. Массив с 5 элементами</h2>
+    <p>Создайте массив, используя литеры [], заполните его пятью элементами, выведите на экран значение третьего элемента.</p>
+    <button onclick="task18()">Выполнить</button>
+    <div class="result" id="task18"></div>
+</div>
+
+<!-- Задание 19 -->
+<div class="task">
+    <h2>19. Длина массива</h2>
+    <p>Выведите на экран значение длины массива пункта 18, используя свойство length.</p>
+    <button onclick="task19()">Выполнить</button>
+    <div class="result" id="task19"></div>
+</div>
+
+<!-- Задание 20 -->
+<div class="task">
+    <h2>20. Все элементы массива</h2>
+    <p>Выведите на экран все значения элементов массива пункта 18.</p>
+    <button onclick="task20()">Выполнить</button>
+    <div class="result" id="task20"></div>
+</div>
+
+<!-- Задание 21 -->
+<div class="task">
+    <h2>21. Массив через конструктор</h2>
+    <p>Создайте пустой массив, используя конструктор Array, наполните его элементами, один из элементов должен быть массивом. Выведите элементы массива на экран.</p>
+    <button onclick="task21()">Выполнить</button>
+    <div class="result" id="task21"></div>
+</div>
+
+<!-- Задание 22 -->
+<div class="task">
+    <h2>22. Объект телефонная книга</h2>
+    <p>Создайте объект телефонная книга, используя литеры {}, добавьте в него свойства ФИО, и телефонный номер. Выведите значения свойств объекта на экран.</p>
+    <button onclick="task22()">Выполнить</button>
+    <div class="result" id="task22"></div>
+</div>
+
+<!-- Задание 23 -->
+<div class="task">
+    <h2>23. Объект через конструктор</h2>
+    <p>Создайте любой объект с пятью свойствами, используя конструктор Object. Выведите все свойства, используя цикл for in.</p>
+    <button onclick="task23()">Выполнить</button>
+    <div class="result" id="task23"></div>
+</div>
+
+<!-- Задание 24 -->
+<div class="task">
+    <h2>24. Значения свойств объекта</h2>
+    <p>Используя, цикл for in выведите на экран значения свойств объекта пункта 23.</p>
+    <button onclick="task24()">Выполнить</button>
+    <div class="result" id="task24"></div>
+</div>
+
+<script>
+    // Задание 1
+    function task1() {
+        let yourName = "Алексей";
+        let result = `Длина имени "${yourName}": ${yourName.length}`;
+        document.getElementById('task1').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 2
+    function task2() {
+        let sum = 3 + 5;
+        let result = `3 + 5 = ${sum}`;
+        document.getElementById('task2').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 3
+    function task3() {
+        let division = 16 / 2;
+        let result = `16 / 2 = ${division}`;
+        document.getElementById('task3').textContent = result;
+        confirm(result);
+    }
+
+    // Задание 4
+    function task4() {
+        let age = 21;
+        let result = `Мой возраст: ${age}`;
+        document.getElementById('task4').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 5
+    function task5() {
+        let word = prompt("Введите любое слово:");
+        if (word) {
+            let length = word.length;
+            let firstTwo = word.substring(0, 2);
+            let result = `Длина слова "${word}": ${length}\nПервые две буквы: "${firstTwo}"`;
+            document.getElementById('task5').textContent = result;
+            console.log(result);
+        }
+    }
+
+    // Задание 6
+    function task6() {
+        let parent1Age = prompt("Возраст первого родителя:");
+        let parent2Age = prompt("Возраст второго родителя:");
+
+        if (parent1Age && parent2Age) {
+            let result;
+            if (parent1Age > parent2Age) {
+                result = "Первый родитель старше";
+            } else if (parent2Age > parent1Age) {
+                result = "Второй родитель старше";
+            } else {
+                result = "Родители одного возраста";
+            }
+            document.getElementById('task6').textContent = result;
+            console.log(result);
+        }
+    }
+
+    // Задание 7
+    function task7() {
+        let childAge = prompt("Сколько лет ребенку?");
+        if (childAge) {
+            let isReady = confirm("Готов ли ребенок идти на концерт Аллы Пугачевой?");
+            let result;
+            if (childAge > 12 && isReady) {
+                result = "Вперед за билетами";
+                alert(result);
+            } else {
+                result = "Сиди дома";
+                alert(result);
+            }
+            document.getElementById('task7').textContent = result;
+        }
+    }
+
+    // Задание 8
+    function task8() {
+        function square(num) {
+            return num * num;
+        }
+        let num = prompt("Введите число для возведения в квадрат:");
+        if (num) {
+            let result = square(parseFloat(num));
+            alert(`Квадрат числа ${num}: ${result}`);
+            document.getElementById('task8').textContent = `Квадрат числа ${num}: ${result}`;
+        }
+    }
+
+    // Задание 9
+    function task9() {
+        function greet() {
+            let name = prompt("Как вас зовут?");
+            if (name) {
+                let greeting = `Здравствуйте, ${name}`;
+                alert(greeting);
+                document.getElementById('task9').textContent = greeting;
+            }
+        }
+        greet();
+    }
+
+    // Задание 10
+    function task10() {
+        function checkDivision() {
+            let num = prompt("Введите число:");
+            if (num) {
+                if (num % 4 === 0) {
+                    alert("Выражение истинно");
+                    document.getElementById('task10').textContent = `Число ${num} делится на 4 без остатка - выражение истинно`;
+                } else {
+                    alert("Выражение ложно");
+                    document.getElementById('task10').textContent = `Число ${num} не делится на 4 без остатка - выражение ложно`;
+                }
+            }
+        }
+        checkDivision();
+    }
+
+    // Задание 11
+    function task11() {
+        function perimeter(a, b) {
+            return 2 * (a + b);
+        }
+        let a = 5, b = 10;
+        let result = perimeter(a, b);
+        document.getElementById('task11').textContent = `Периметр прямоугольника со сторонами ${a} и ${b}: ${result}`;
+        console.log(result);
+    }
+
+    // Задание 12
+    function task12() {
+        let output = "Числа от 1 до 10: ";
+        for (let i = 1; i <= 10; i++) {
+            output += i + " ";
+            console.log(i);
+        }
+        document.getElementById('task12').textContent = output;
+    }
+
+    // Задание 13
+    function task13() {
+        let output = "Числа от 5 до 50 с шагом 5: ";
+        for (let i = 5; i <= 50; i += 5) {
+            output += i + " ";
+            console.log(i);
+        }
+        document.getElementById('task13').textContent = output;
+    }
+
+    // Задание 14
+    function task14() {
+        let output = "Числа от 1 до 10 (while): ";
+        let i = 1;
+        while (i <= 10) {
+            output += i + " ";
+            console.log(i);
+            i++;
+        }
+        document.getElementById('task14').textContent = output;
+    }
+
+    // Задание 15
+    function task15() {
+        let output = "Числа от 5 до 50 с шагом 5 (while): ";
+        let j = 5;
+        while (j <= 50) {
+            output += j + " ";
+            console.log(j);
+            j += 5;
+        }
+        document.getElementById('task15').textContent = output;
+    }
+
+    // Задание 16
+    function task16() {
+        let output = "";
+        let k = 5;
+        do {
+            output += "Нас не задушишь, не убьешь\n";
+            console.log("Нас не задушишь, не убьешь");
+            k++;
+        } while (k < 1);
+        document.getElementById('task16').textContent = output || "Цикл выполнился 1 раз с сообщением в консоли";
+    }
+
+    // Задание 17
+    function task17() {
+        let choice = prompt("Выберите: яблоко, апельсин, сок, пиво");
+        if (choice) {
+            let result;
+            switch (choice.toLowerCase()) {
+                case "яблоко":
+                case "апельсин":
+                case "сок":
+                case "пиво":
+                    result = `Ваш выбор "${choice}" просто идеален`;
+                    break;
+                default:
+                    result = "Пошел прочь!";
+            }
+            console.log(result);
+            document.getElementById('task17').textContent = result;
+        }
+    }
+
+    // Задание 18
+    function task18() {
+        let fruits = ["яблоко", "апельсин", "банан", "груша", "киви"];
+        let result = `Третий элемент массива: "${fruits[2]}"`;
+        document.getElementById('task18').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 19
+    function task19() {
+        let fruits = ["яблоко", "апельсин", "банан", "груша", "киви"];
+        let result = `Длина массива: ${fruits.length}`;
+        document.getElementById('task19').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 20
+    function task20() {
+        let fruits = ["яблоко", "апельсин", "банан", "груша", "киви"];
+        let result = `Все элементы массива: ${fruits.join(", ")}`;
+        document.getElementById('task20').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 21
+    function task21() {
+        let complexArray = new Array();
+        complexArray[0] = "текст";
+        complexArray[1] = 123;
+        complexArray[2] = ["вложенный", "массив"];
+        let result = `Элементы массива: ${JSON.stringify(complexArray)}`;
+        document.getElementById('task21').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 22
+    function task22() {
+        let phoneBook = {
+            name: "Сидоров Алексей Витальевич",
+            phone: "+7 (123) 456-78-90"
+        };
+        let result = `Телефонная книга:\nФИО: ${phoneBook.name}\nТелефон: ${phoneBook.phone}`;
+        document.getElementById('task22').textContent = result;
+        console.log(result);
+    }
+
+    // Задание 23
+    function task23() {
+        let car = new Object();
+        car.brand = "Toyota";
+        car.model = "Corolla";
+        car.year = 2008;
+        car.color = "gray";
+        car.price = 25000;
+
+        let result = "Свойства объекта:\n";
+        for (let prop in car) {
+            result += prop + "\n";
+            console.log(prop);
+        }
+        document.getElementById('task23').textContent = result;
+    }
+
+    // Задание 24
+    function task24() {
+        let car = new Object();
+        car.brand = "Toyota";
+        car.model = "Corolla";
+        car.year = 2008;
+        car.color = "gary";
+        car.price = 25000;
+
+        let result = "Значения свойств объекта:\n";
+        for (let prop in car) {
+            result += `${prop}: ${car[prop]}\n`;
+            console.log(car[prop]);
+        }
+        document.getElementById('task24').textContent = result;
+    }
+</script>
+</body>
+</html>

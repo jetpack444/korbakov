@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Галерея с эффектами</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            transition: background-color 0.5s ease;
+        }
+
+        body.darkened {
+            background-color: #333;
+        }
+
+        h1, h2 {
+            color: #333;
+            transition: color 0.5s ease;
+        }
+
+        body.darkened h1,
+        body.darkened h2 {
+            color: #fff;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img {
+            display: block;
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .media-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+<h1>Моя галерея с эффектами</h1>
+
+<h2>Изображения</h2>
+<div class="gallery">
+    <div class="gallery-item" onmouseover="darkenBackground()" onmouseout="lightenBackground()">
+        <img src="https://sun9-32.userapi.com/impg/vOJaxHChrJhIemLLU3e6SBXQQXcMUy0SikitKA/9qE9ORMivT8.jpg?size=959x768&quality=95&sign=06c10ff004af959e06e0f0a25fd62b05&type=album" alt="Я">
+        <div class="caption">я</div>
+    </div>
+
+    <div class="gallery-item" onmouseover="darkenBackground()" onmouseout="lightenBackground()">
+        <img src="https://sun9-50.userapi.com/s/v1/ig2/V9PPFbNqpNi__zMTqN3weaO1BCYX_VPiRviy1xMAfMN1aML2rbwC4MV4xXc8dMRKR2ttbyQgSLbDc3svZAn--9p6.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,2560x2560&from=bu&u=cKSF9klUGADqic3mpqWj-9frSG2XJQayYbLQf4YSv64&cs=320x320" alt="Машина">
+        <div class="caption">Машина</div>
+    </div>
+
+    <div class="gallery-item" onmouseover="darkenBackground()" onmouseout="lightenBackground()">
+        <img src="https://sun9-39.userapi.com/s/v1/ig2/-9CWwFAW4VC6VTihE9H4M9mc7A59fiufIHBFo5CMICKASx5pR0_u2aui36DP7Ld9QHrfFAYk52X_jgborEmHyHUh.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x361,480x481,540x541,563x564&from=bu&u=kgsLT-dTXWd8jlBrpBkADbibS0z14eGszn-6JCleRo4&cs=510x511" alt="Автомобиль">
+        <div class="caption">Автомобиль</div>
+    </div>
+
+    <div class="gallery-item" onmouseover="darkenBackground()" onmouseout="lightenBackground()">
+        <img src="https://sun9-52.userapi.com/s/v1/ig2/gGmFBF0o-bzdCTsHzCVqL1hqI2FZNAXBdz3pwii4esyDaNNFQtx4r5pTyQ9Ge2Z-QNbj3yMDMBAIW0vTU5vknN7E.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,500x500&from=bu&u=hGgXEXrQXp7WlB_yFHQP7wD3lktu8TiZgR5ZYM9aOn8&cs=320x320" alt="Мультфильм">
+        <div class="caption">Мультфильм</div>
+    </div>
+</div>
+
+<h2>Видео с YouTube</h2>
+<video controls width="400">
+    <source src="https://www.youtube.com/embed/dQw4w9WgXcQ" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+</video>
+
+<h2>Аудио</h2>
+<audio controls>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<!--Скрипт для плавности затемнения и возвращения-->
+<script>
+    function darkenBackground() {
+        document.body.classList.add('darkened');
+    }
+
+    function lightenBackground() {
+        document.body.classList.remove('darkened');
+    }
+</script>
+
+</body>
+</html>

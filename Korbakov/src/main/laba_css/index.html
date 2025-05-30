@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | Мой блог</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+
+        /* Анимация баннера */
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #1a252f);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-out, pulse 2s infinite 1s;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            animation: progress 3s linear infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 80%;
+            left: 10%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            background: #2980b9;
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .grid-container {
+                padding: 20px 10px;
+            }
+
+            .banner {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="banner">
+        Специальное предложение: Подпишитесь и получите больше информации!
+    </div>
+    <h1>Мой персональный блог</h1>
+    <nav class="navbar">
+        <a href="index.html">Главная</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="contacts.html">Контакты</a>
+    </nav>
+</header>
+
+<main class="grid-container">
+    <article class="card">
+        <img src="https://sun9-32.userapi.com/impg/vOJaxHChrJhIemLLU3e6SBXQQXcMUy0SikitKA/9qE9ORMivT8.jpg?size=959x768&quality=95&sign=06c10ff004af959e06e0f0a25fd62b05&type=album" alt="Музей" class="card-img">
+        <h2>Музей</h2>
+        <p>Недавно я посетил живописный музей. Величественные пейзажи, картины...</p>
+        <a href="#" class="read-more">Читать далее →</a>
+    </article>
+
+    <article class="card">
+        <img src="https://sun9-39.userapi.com/s/v1/ig2/-9CWwFAW4VC6VTihE9H4M9mc7A59fiufIHBFo5CMICKASx5pR0_u2aui36DP7Ld9QHrfFAYk52X_jgborEmHyHUh.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x361,480x481,540x541,563x564&from=bu&u=kgsLT-dTXWd8jlBrpBkADbibS0z14eGszn-6JCleRo4&cs=510x511" alt="Поездка на природу" class="card-img">
+        <h2>Поездка на природу</h2>
+        <p>Куда можно съездить с семьей в 2025 году. Топ живописных мест...</p>
+        <a href="#" class="read-more">Читать далее →</a>
+    </article>
+
+    <article class="card">
+        <img src="https://sun9-54.userapi.com/impg/IEm_nwSgcyI0WMnOUtFXzf9FyaicYMaDKJjarg/_PAkrNu0dks.jpg?size=1170x1170&quality=95&sign=184db7285f5ed837550b06c9aca580de&type=album" alt="Диски" class="card-img">
+        <h2>Какие диски поставить на черный автомобиль?</h2>
+        <p>Какие диски поставить на черный автомобиль? Рассчет размера под ваш...</p>
+        <a href="#" class="read-more">Читать далее →</a>
+    </article>
+
+    <article class="card">
+        <img src="https://sun9-71.userapi.com/impg/qPvzecVRv2xnTO7e5XV3oApWkKzXcsOL79U9qw/xv07Jku4gnw.jpg?size=1615x2160&quality=95&sign=bac66e41808729c4b382a60d1c24d3c5&type=album" alt="Учеба" class="card-img">
+        <h2>Лучший преподаватель</h2>
+        <p>Топ 5 перспективных преподавателей 2025...</p>
+        <a href="#" class="read-more">Читать далее →</a>
+    </article>
+</main>
+
+<footer class="footer">
+    <p>© 2025 Мой персональный блог. Все права защищены.</p>
+</footer>
+</body>
+</html>
